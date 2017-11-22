@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<title>Visualising Fitts's Law</title>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+		<link type="text/css" rel="stylesheet" href="style.css"/>
+		<link type="text/css" rel="stylesheet" href="bootstrap.css"/>
+		<script type="text/javascript" src="d3/d3.v2.js"></script>
+		<script type="text/javascript" src="d3/lib/jquery/jquery.min.js"></script>
+	  <script type="text/javascript" src="d3/lib/jquery-ui/jquery-ui.min.js"></script>
+
+	</head>
+	<body>
+
+		<div class="container">
+			<h1 class="jumbotron">Fitts’s Law Replication using JavaScript and D3</h1>
+				<div class = "row">
+					<div class="col-sm-12">
+					<p>
+						Fitts's Law is a predictive model of human movement established by Paul Fitts in 1954. In Human Computer Interaction, it is typically applied to the movement through user interface using a cursor or any type of pointer.
+						The law predicts that the time required to move to a target is a function of the distance to the target divided by the size of the target.
+					</p>
+					<h2>Fitts's Law</h2>
+					<p>
+						Fitts proposed the index of difficulty (ID) of the task which depends on the distance to the target and the width of target. Fitts's ID is given by:
+							<img src="fittsID.png" style="width: 160px" alt="Fitts's index of difficulty" />
+					</p>
+					<p>
+						The form most frequently used in the Human-Computer Interaction was given by Scott MacKenzie and is called Shannon formulation given by:
+							<img src="shannon.png" style="width: 160px" alt="Shannon Formulation of the Fitts's law" />
+						where <strong> D </strong> is the distance to the target, <strong> W </strong> is the target's width, and <strong> ID </strong> is the <strong> Index of Difficulty</strong>.
+					</p>
+					<h2>The Experiment</h2>
+					<p>
+						Below is the experimental test setup for Fitts law. The test follows ISO Standard (ISO 9241-9:2000). The test setup allows user to select from 2 different target sizes and 3 different target distances.
+					</p>
+					</div>
+				</div>
+
+			<div class="row">
+
+		    <div class="col-sm-3">
+					<p>
+						<button id="randomizeButton" type="button">Select random width and target</button></br>
+						<input type="checkbox" id="randomizeCheckbox" checked /> randomize after round
+					</p>
+					<hr />
+					<p> Select size of target:</p>
+					<p>
+					<input type="radio" name="size" value="15" > 15<br>
+					<input type="radio" name="size" value="60" checked> 60<br>
+					</p>
+					<hr />
+					<p> Select distance to target:</p>
+					<p>
+						<input type="radio" name="distance" value="100" > 100<br>
+						<input type="radio" name="distance" value="250" checked> 250<br>
+						<input type="radio" name="distance" value="400" > 400<br>
+					</p>
+					<hr />
+					<p>
+						Data Sets:
+						<div id="dataSets"></div>
+						<button id="addDataSetButton" type="button">Add Data Set</button>
+					</p>
+					<hr />
+
+		    </div>
+				<div class="col-sm-3">
+					<label id="current_count">Hit Count : 0</label><br>
+					<label id="missed_count">   Missed count: 0</label>
+				</div>
+
+				<div class="col-sm-6">
+						<div id="experiment" class="sans">
+
+						</div>
+								<p class="caption">
+									Figure 1: Experiment Area: Click the target circle and avoid missing the target.
+								</p>
+    		</div>
+		</div>
+		<h2>Data analysis:</h2>
+		<button id="update_plots"  type="button">Update Plots</button>
+
+		<div class="row">
+
+				<div class="col-sm">
+							<p>Movement Time over ID</p>
+							<div id="timeOverID" class="sans"></div>
+							<p class="caption">
+								Figure 2: Time in ms over Index of Difficulty for each movement.
+							</p>
+				</div>
+
+				<div class="col-sm">
+							<p>Throughput over ID</p>
+							<div id="throughput" class="sans"></div>
+							<p class="caption">
+								Figure 3: Throughput over Index of Difficulty for each movement.
+							</p>
+				</div>
+		</div>
+
+		<p><strong>Plots with average Time and Throughput</strong></p>
+		<div class="row">
+				<div class="col-sm">
+							<p>Movement Time over ID</p>
+							<div id="avgTimeOverID" class="sans"></div>
+							<p class="caption">
+								Figure 4: Average Time in ms over Index of Difficulty.
+							</p>
+				</div>
+
+				<div class="col-sm">
+							<p>Throughput over ID</p>
+							<div id="avgThroughput" class="sans"></div>
+							<p class="caption">
+								Figure 5: Average Throughput over Index of Difficulty
+							</p>
+				</div>
+		</div>
+
+		<button id="export_data"  type="button">Export data</button>
+		<p>Update plots before exporting data</p>
+
+
+			<script type="text/javascript" src="fitts-law.js"></script>
+
+		</div>
+	</body>
+</html>

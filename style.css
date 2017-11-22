@@ -1,0 +1,100 @@
+@import url("d3/lib/jquery-ui/jquery-ui.css");
+
+h1 {
+	display: block;
+	font-size: 3em;
+	color: #ab4d42
+	font-family: 'Open Sans';
+	font-weight: 300;
+	margin-bottom: 0.3333333em;
+	margin-top: 0.333333em;
+}
+
+h2 {
+	display: block;
+	font-size: 1.33em;
+	font-family: 'Open Sans';
+	font-weight: 700;
+	margin-bottom: 0.33em;
+	margin-top: 0.5em;
+}
+
+p {
+	margin-bottom: 1em;
+}
+
+h1 strong {
+	font-weight: 400;
+}
+
+strong {
+	font-weight: 600;
+}
+
+.sans {
+	font-family: 'Open Sans';
+	font-weight: 700;
+	font-size: 0.8em;
+}
+
+p.caption {
+	font-family: 'Open Sans';
+	font-size: 0.8em;
+	font-style: italic;
+}
+
+
+.border {
+	border: solid black 1px;
+}
+
+hr {
+	height: 1px;
+	background-color: #ccc;
+	margin: 15px;
+}
+
+#dataSets .active {
+	border-style: double;
+}
+
+#dataSets div {
+	height: 35px;
+	text-align: center;
+}
+
+#dataSets button {
+	height: 30px;
+}
+
+
+#sliderRadius, #sliderDistance {
+	margin-top: -10px;
+}
+
+.bg {
+	fill: #f4f7fc;
+	stroke: #000;
+	stroke-width: 2px;
+  shape-rendering: crispEdges;
+}
+
+.axis line {
+  fill: none;
+  stroke: #ccc;
+  shape-rendering: crispEdges;
+}
+
+path {
+  fill: none;
+  stroke: #000;
+}
+
+circle.iso {
+	fill: #8fd5dd;
+	opacity: 0.5;
+}
+
+.remove{
+	float: right;
+}
